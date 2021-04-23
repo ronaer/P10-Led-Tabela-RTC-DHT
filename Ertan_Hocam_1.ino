@@ -1,5 +1,5 @@
 /*
-  https://github.com/ronaer/P10-Led-Tabela-RTC-DHT
+ https://github.com/ronaer/P10-Led-Tabela-RTC-DHT/blob/master/Ertan_Hocam_1.ino
   YouTube >>> TR.ALP.18
   Açık kaynak lisansı altında kullanılabilir, paylaşılabilir...
 */
