@@ -31,7 +31,7 @@ char ay_isimleri[13][10] = {" ", "OCAK", "SUBAT", "MART", "NiSAN", "MAYIS", "HAZ
 DMD dmd(DISPLAYS_ACROSS, DISPLAYS_DOWN); // Bir satır, bir sütun
 
 #define DHTPIN 2 //DHT 2.pine bağlı
-#define DHTTYPE DHT11 // ve DHT22 bağlanıyor
+#define DHTTYPE DHT22 // ve DHT22 bağlanıyor
 DHT dht(DHTPIN, DHTTYPE); //DHT'yi kütüphaneye tanıtalım
 
 int saniye;
