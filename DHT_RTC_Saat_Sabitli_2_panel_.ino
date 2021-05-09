@@ -1,7 +1,7 @@
 /*
   ---------------------------------------------------------------------
  | https://github.com/ronaer/P10-Led-Tabela-RTC-DHT                    |
- | YouTube >>> TR.ALP.18                                               |
+ | YouTube >>> Dr.TRonik                                              |
  | Açık kaynak lisansı altında kullanılabilir, paylaşılabilir...       |
   ---------------------------------------------------------------------
 */
@@ -377,4 +377,4 @@ void half_()
   delay(5000);
   dmd.clearScreen( true );
 }
-// YouTube--> TR.ALP.18 -->bilgi@ronaer.com
+// YouTube--> Dr.TRonik -->bilgi@ronaer.com
