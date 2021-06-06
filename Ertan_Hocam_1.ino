@@ -28,7 +28,7 @@ char ay_isimleri[13][10] = {" ", "OCAK", "SUBAT", "MART", "NiSAN", "MAYIS", "HAZ
 
 #define DISPLAYS_ACROSS 3  //Satırda ve sütunda yeralacak P10 panel sayısı
 #define DISPLAYS_DOWN 1
-DMD dmd(DISPLAYS_ACROSS, DISPLAYS_DOWN); // Bir satır, bir sütun
+DMD dmd(DISPLAYS_ACROSS, DISPLAYS_DOWN); 
 
 #define DHTPIN 2 //DHT 2.pine bağlı
 #define DHTTYPE DHT22 // ve DHT22 bağlanıyor
