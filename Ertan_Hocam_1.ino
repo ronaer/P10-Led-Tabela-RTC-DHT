@@ -26,8 +26,8 @@ RTC_DS3231 rtc; //Modul ismimiz
 char ay_isimleri[13][10] = {" ", "OCAK", "SUBAT", "MART", "NiSAN", "MAYIS", "HAZiRAN", "TEMMUZ" , "AGUSTOS" , "EYLUL", "EKiM", "KASIM", "ARALIK"};
 // Gün olarak 0-6, 0=PAZAR ; ay olarak ise 1-12 , 1=OCAK döndürülüyor...
 
-#define DISPLAYS_ACROSS 3  //Satırda ve sütunda yeralacak P10 panel sayısı
-#define DISPLAYS_DOWN 1
+#define DISPLAYS_ACROSS 3  //Satırda 
+#define DISPLAYS_DOWN 1 // ve sütunda yeralacak P10 panel sayısı
 DMD dmd(DISPLAYS_ACROSS, DISPLAYS_DOWN); 
 
 #define DHTPIN 2 //DHT 2.pine bağlı
