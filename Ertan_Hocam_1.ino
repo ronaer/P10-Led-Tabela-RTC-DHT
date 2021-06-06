@@ -6,7 +6,7 @@
 //Eklemeler ve global değişken tanımlamaları...
 
 #include <DHT.h>  //DHT kütüphanesi https://github.com/adafruit/DHT-sensor-library
-#include <Wire.h> //Tek kablo üzerinden bilgi aktarma için gerekli kütüphane https://github.com/PaulStoffregen/Wire
+#include <Wire.h> // https://github.com/PaulStoffregen/Wire
 #include "SPI.h"  //DMD kütüphanesi için gerekli https://github.com/PaulStoffregen/SPI
 #include "DMD.h"  //Bu proje için ekleme yapılmış olarak:https://github.com/ronaer/P10-Led-Tabela-RTC-DHT/blob/master/DMD-master.zip;
 #include "TimerOne.h" https://github.com/PaulStoffregen/TimerOne
@@ -73,16 +73,16 @@ void setup() {
     // January 21, 2014 at 3am you would call:
     //rtc.adjust(DateTime(2014, 1, 1, 3, 0, 0));
   }
-  //rtc.adjust(DateTime(2021, 04, 24, 11, 17, 0));
+  //rtc.adjust(DateTime(2021, 6, 6, 13, 10, 0));
   //rtc.adjust(DateTime(F(__DATE__), F(__TIME__)));
 
-  Serial.begin(9600); //Seri portan bi bakalım her şey yolunda mı diye seri port başlasın...
+  //Serial.begin(9600); //Seri portan bi bakalım her şey yolunda mı diye seri port başlasın...
 
   Timer1.initialize( 2000 );
   Timer1.attachInterrupt( ScanDMD );
   dmd.clearScreen( true );
-  dmd.selectFont(TimesNewRoman16b);
-  dmd.drawChar(5, 1 , '?', GRAPHICS_OR );
+  //dmd.selectFont(TimesNewRoman16b);
+  //dmd.drawChar(5, 1 , '?', GRAPHICS_OR );
 }
 
 
@@ -90,11 +90,11 @@ void setup() {
 void loop() {
   if (ilk_calisma == true)
   {
-    t = dht.readTemperature();
+    t = dht.readTemperature()-1; //kutu içerisinde olduğundan ısı 1 derece yükseliyor...
     h = dht.readHumidity();
   }
   ilk_calisma = false;
-  //
+  // İlk loop döngüsünde çalışması için... Sonraki looplarda çalışmaz...
 
 
 
@@ -138,18 +138,27 @@ void loop() {
 
 
   //
-  if (saniye == 8) //ayarlanan saniye  değişkeninde kayar yazıya geçer...
+  if (saniye == 7) //ayarlanan saniye  değişkeninde kayar yazıya geçer...
   {
 
-    t = dht.readTemperature();
+    t = dht.readTemperature()-1;
     h = dht.readHumidity();
+    
   }
 
 
   if (saniye == 10)
   {
-
-    drawText(textToScroll);//Yazıyı kaydırmak için drawtext() şart, void drawtext sonrasında çalışır...
+if (isnan(t))
+    { 
+      t = dht.readTemperature();
+      h = dht.readHumidity();
+      return; 
+      // eğer t verisi okunanmaz ise kayar yazı çalışmaz ve void loop baştan çalışır...
+      // böylece kayar yazı içerisinde NAN verisi gelmez...
+    }
+    drawText(textToScroll);//Yazıyı kaydırmak için drawtext() şart, void drawtext tanımlı ise çalışır...
+    
   }
   else {
 
