@@ -1,6 +1,6 @@
 /*
   https://github.com/ronaer/P10-Led-Tabela-RTC-DHT
-  YouTube >>> TR.ALP.18
+  YouTube >>> Dr.TRonik
   Açık kaynak lisansı altında kullanılabilir, paylaşılabilir...
 */
 //Eklemeler ve global değişken tanımlamaları...
@@ -94,7 +94,7 @@ void loop() {
   saniye = now.second(), DEC;
 
   char *yaz ;
-  yaz = "youtube TR.ALP.18";
+  yaz = "YouTube Dr.TRonik";
 
   int gun ;
   gun =  now.day();
@@ -187,4 +187,4 @@ void drawText( String dispString )
 }
 //_____________________Kayan yazı fonksiyon sonu
 
-// YouTube--> TR.ALP.18  abone olursanız sevinirim...
+// YouTube >>> Dr.TRonik...
